@@ -16,8 +16,9 @@ function login() {
             passwordError.textContent = "Senha inválida. Tente novamente.";
         } else if (error.code === "auth/too-many-requests"){
             passwordError.textContent = "Por favor, tente novamente mais tarde.";
-        } 
-        else {
+        } else if (error.code === "auth/missing-password"){
+            passwordError.textContent = "Por favor, insira uma senha";
+        }else {
             passwordError.textContent = "";
         }   
     });
